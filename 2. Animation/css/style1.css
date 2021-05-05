@@ -5,10 +5,12 @@
     50%{
         transform: translate(300px,0);
     }
+    70%{
+        transform: translate(300px,200px);
+    }
     100%{
         transform: translate(500px,400px)
     }
-    
 }
 
 .box {
@@ -20,4 +22,8 @@
     border: 2px solid black;
     background: #fff000;
     animation: sample-ani 2s linear infinite alternate;
+}
+
+.box:hover{
+    animation-play-state: paused;
 }
