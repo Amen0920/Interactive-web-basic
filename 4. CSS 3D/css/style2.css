@@ -30,6 +30,9 @@
     justify-content: center;
     font-size: 1.5rem;
     border-radius: 0.5em;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
     backface-visibility: hidden;
     
 }
