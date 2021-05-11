@@ -19,18 +19,39 @@
         (function(){
             const images = document.querySelectorAll('.image');
             const stage = document.querySelector('.stage');
-
-            const clickHandler = (e) =>{
-                e.target.parentNode.removeChild(e.target);
-                // parenetNode로 부모 객체 참고가능.
+            // =================================================
+            // const clickHandler = (e) =>{
+            //     e.target.parentNode.removeChild(e.target);
+            //     // parenetNode로 부모 객체 참고가능.
                 
-                // stage.removeChild(e.target); 
-                // 일반적인 구현방법 
-            };
+            //     // stage.removeChild(e.target); 
+            //     // 일반적인 구현방법 
+            // };
 
-            for(let i=0; i<images.length; i++){
-                images[i].addEventListener('click',clickHandler)
+            // //for 반복문돌려서 이벤트거는건 실행속도에 악영향을 줌.
+            // for(let i=0; i<images.length; i++){
+            //     images[i].addEventListener('click',clickHandler)
+            // }
+
+            //===================================================
+
+            //이벤트 위임 방식.
+            function clickHandler(e){
+                //this 는 addEventListenr가 된 객체를 가리킴 ( 해당예제에서는 stage )
+
+                //e.currentTaget 은 this와 동일.
+
+                // e.target을 사용해야함.
+
+                //stage를 클릭하면 에러발생하기때문에 조건문으로 예외처리해주어야함.
+                if(e.target.classList.contains('image')){
+                    stage.removeChild(e.target);
+                }
+
+                // 위방식이랑 다른점!! => addEventListener를 한번만 사용. 메모리적게사용
+                
             }
+            stage.addEventListener('click',clickHandler);
         })();
     </script>
 </body>

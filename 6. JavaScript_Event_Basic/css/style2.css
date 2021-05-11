@@ -1,0 +1,38 @@
+.menu{
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:500px;
+    height:200px;
+    margin: -100px 0 0 -250px;
+    border-radius: 1em;
+    border:2px solid black;
+    background:rgb(177, 177, 177);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-btn{
+    margin-right: 10px;
+    border-radius: 1em;
+    border:2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle,#fff000, hsl(46, 100%, 50%),#ffa600);
+}
+.icon{
+    width:50px;
+    height:50px;
+    /* pointer-events: none; */
+}
+.btn-label{
+    font-weight: bold;
+    text-shadow:2px 2px 2px grey;
+
+    /* 클릭이벤트를 걸기위해. */
+    /* pointer-events: none; */
+}
+.menu-btn:hover{
+    background: #f5efa3;
+}
