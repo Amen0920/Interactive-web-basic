@@ -1,0 +1,70 @@
+.stage{
+    width:100vw;
+    height:100vh;
+    background: #333;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.door {
+    width:100px;
+    height:150px;
+    position:relative;
+
+}
+
+.door-back{
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background: black;
+    overflow: hidden;
+}
+.door-image{
+    position:absolute;
+    bottom:0;
+    width:100px;
+    height:100px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    /* x축만 이동하는데 translateX 가 아니라 translate3d를 사용한이유는
+    CSS 에서 3D가 붙은 속성들은 하드웨어 가속을 지원하기때문. */
+    transform:translate3d(100%,0,0);   
+    
+    /* transLaste의 %는 속성값을 넣는 객체의 width,height 값을 기준으로함 
+       최근 사이트들은 반응형사이트로 만드는경우가 많기때문에 상대적인 크기값을 사용하는것이 좋다.
+    */
+
+
+    /* transition 사긴이 두개들어갈때 앞 시간은 duration  뒤 시간은 delay 를 나타냄 */
+    transition: 0.5s 0.5s;
+    
+}
+
+.door:nth-child(1) .door-image{background-image:url(../img/3.png)}
+.door:nth-child(2) .door-image{background-image:url(../img/4.png)}
+.door:nth-child(3) .door-image{background-image:url(../img/5.png)}
+
+.door-body{
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    transition: 0.5s;
+    transform-origin: left;
+}
+.door:nth-child(1) .door-body{background: rgba(255,0,0,0.7);}
+.door:nth-child(2) .door-body{background: rgba(0,255,0,0.7);}
+.door:nth-child(3) .door-body{background: rgba(0,0,255,0.7);}
+
+/* 클릭시 문이 열리게하기위해 클래스명 변경. */
+.door-opened .door-body{
+    transform:perspective(800px) rotateY(-110deg);
+}
+.door-opened .door-image{
+    transform: translate3d(0,0,0);
+}
