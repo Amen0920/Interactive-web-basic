@@ -1,0 +1,11 @@
+ body{
+    -webkit-overflow-scrolling: touch;
+    color:#555;
+    background: #fff000;
+ }
+
+ .world{
+    perspective: 1000px;
+    
+
+ }
