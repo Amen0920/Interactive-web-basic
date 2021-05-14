@@ -1,4 +1,5 @@
  body{
+    height:500vh;
     -webkit-overflow-scrolling: touch;
     color:#555;
     background: #fff000;
@@ -35,17 +36,26 @@
  }
  .wall-left{
     width:1000vw;
-    transform: rotateY(90deg);
-    left:-500vw;
+    transform: rotateY(90deg) translateZ(-500vw);
+    background: #f8f8f8;;
  }
  
  .wall-right{
     width:1000vw;
     height:100vh;
-    transform:rotateY(90deg) translateZ(100vw);
-    left:-500vw;
-    
+    background: #f8f8f8;;
+    transform:rotateY(90deg) translateZ(-400vw);
+   
  }
+ .wall-front-a { transform : translateZ(300vw);}
+
+ .wall-front-b { transform : translateZ(50vw);}
+
+ .wall-front-c { transform : translateZ(-200vw);}
+
+ .wall-front-d { transform : translateZ(-500vw);}
+
+
 
  .wall-content{
     display:flex;
@@ -57,3 +67,4 @@
  .wall-title{
     font-size: 5rem;
  }
+
