@@ -36,7 +36,12 @@
     window.addEventListener('scroll',scollHandler);
     window.addEventListener('resize',resizeHandler);
     window.addEventListener('mousemove', mouseMoveHandler);
-    
+
+    stageElem.addEventListener('click',function(e){
+        new Character({xPos : e.clientX / window.innerWidth * 100});
+        
+    })
+
     resizeHandler();
 
 })();
