@@ -32,5 +32,32 @@ function Character(info){
         <div class="character-face character-leg-face face-back"></div>
     </div>`;
     document.querySelector('.stage').appendChild(this.mainElem);
-        
+   
+    this.mainElem.style.left = `${info.xPos}%`;
+
+    this.scrollState = false;
+    this.init();
+    
 }
+
+Character.prototype = {
+    constructor: Character,
+    init : function(){
+        const self = this;
+
+        window.addEventListener('scroll',function(){
+            clearTimeout(self.scrollState);
+            console.log('clear Self : '+self.scrollState)
+
+            if(!self.scrollState){
+                self.mainElem.classList.add('running');
+            }
+
+            self.scrollState = setTimeout(function(){
+                self.scrollState = false;
+                self.mainElem.classList.remove('running');
+            },500);
+            
+        });
+    }
+};

@@ -23,6 +23,7 @@
  
          //progressbar 
          barElem.style.width = `${scollPer*100}%`
+         
     }
 
     //mouse MOVE function 
