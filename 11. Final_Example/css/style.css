@@ -147,7 +147,7 @@
     width: calc(770/856 * 100%);
     height: calc(648/856 * 100%);
     transform-origin: center bottom;
-    animation: ani-head 0.6s infinite alternate cubic-bezier(0.43, 0.18, 0.68, 0.99);
+    animation: ani-head 0.6s infinite alternate linear;
     
  }
  .character-head-face.face-front{ background-image: url('../img/ilbuni_head_front.png');}
